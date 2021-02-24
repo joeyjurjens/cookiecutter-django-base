@@ -31,9 +31,3 @@ if settings.DEBUG:
             url(r'^__debug__/', include(debug_toolbar.urls)),
         ] + urlpatterns
 
-if 'imprint' in settings.INSTALLED_APPS:
-    from imprint.views import AboutView
-    urlpatterns += [
-        url(r'^about/$', AboutView.as_view(), name='about'),
-    ]
-

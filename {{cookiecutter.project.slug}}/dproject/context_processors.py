@@ -1,5 +1,4 @@
-from django.contrib.sites.models import Site
+from django.conf import settings
 
-
-def site_processor(request):
-    return {'site': Site.objects.get_current()}
+def is_debug_mode(context):
+	return {"is_debug_mode": settings.DEBUG}
