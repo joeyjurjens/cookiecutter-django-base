@@ -7,7 +7,7 @@
     
     {% compress css %}
         {% block styles %}
-            <link type="text/x-scss" href="{% static 'dproject/scss/base.scss' %}" rel="stylesheet" media="screen">
+            <link type="text/x-scss" href="{% static 'base/scss/base.scss' %}" rel="stylesheet" media="screen">
         {% endblock %}
 
         {% block extra_styles %}
@@ -31,7 +31,7 @@
     
     {% compress js %}
         {% block scripts %}
-            <script src="{% static 'dproject/js/base.js' %}"></script>
+            <script src="{% static 'base/js/base.js' %}"></script>
             <script src="{% static 'vuejs/production/vue.min.js' %}"></script>
             <script src="{% static 'axios/production/axios.min.js' %}"></script>
         {% endblock %}

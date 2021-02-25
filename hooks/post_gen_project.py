@@ -88,7 +88,7 @@ def create_repos():
 def create_env_file():
     """ move env.example to .env """
     cwd = os.getcwd()
-    os.rename(os.path.join(cwd, 'config', 'settings', 'env.example'), os.path.join(cwd, 'config', 'settings', '.env'))
+    os.rename(os.path.join(cwd, 'base', 'settings', 'env.example'), os.path.join(cwd, 'base', 'settings', '.env'))
 
 
 def run_migrate():

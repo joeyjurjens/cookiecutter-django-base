@@ -11,8 +11,8 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 
 import environ
 
-ROOT_DIR = environ.Path(__file__) - 3  # (base_dir/config/settings/common.py - 3 = base_dir/)
-PROJ_DIR = ROOT_DIR.path('dproject')
+ROOT_DIR = environ.Path(__file__) - 3  # (base_dir/base/settings/common.py - 3 = base_dir/)
+PROJ_DIR = ROOT_DIR.path('base')
 
 env = environ.Env()
 env.read_env()
@@ -36,6 +36,7 @@ THIRD_PARTY_APPS = (
     'crispy_forms',
     'sorl.thumbnail',
     'compressor',
+    'meta',
 )
 
 LOCAL_APPS = (
@@ -74,9 +75,6 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': env.db('DATABASE_URL', default='{{cookiecutter.db.dbms}}://{{cookiecutter.db.user}}@localhost/{{cookiecutter.db.name}}'),
 }
-#DATABASES['default']['ATOMIC_REQUESTS'] = True
-if DATABASES['default']['ENGINE'] == 'django.db.backends.mysql':
-    DATABASES['default']['OPTIONS'] = {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"}
 
 
 TIME_ZONE = 'UTC'
@@ -116,7 +114,7 @@ TEMPLATES = [
                 'django.template.context_processors.static',
                 'django.template.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
-                'dproject.context_processors.is_debug_mode',
+                'base.context_processors.is_debug_mode',
             ],
             'libraries': {
                'sorl_thumbnail': 'sorl.thumbnail.templatetags.thumbnail',
@@ -151,12 +149,12 @@ FILE_UPLOAD_MAX_MEMORY_SIZE = 5242880
 MEDIA_ROOT = str(PROJ_DIR('media'))
 MEDIA_URL = '/media/'
 
-ROOT_URLCONF = 'config.urls'
+ROOT_URLCONF = 'base.urls'
 LOGIN_URL = '/login/'
 LOGOUT_URL = '/logout/'
 LOGIN_REDIRECT_URL = '/'
 
-WSGI_APPLICATION = 'config.wsgi.application'
+WSGI_APPLICATION = 'base.wsgi.application'
 
 AUTH_PASSWORD_VALIDATORS = [
     {

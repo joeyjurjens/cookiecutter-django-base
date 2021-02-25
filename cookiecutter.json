@@ -9,11 +9,11 @@
         },
         "settings": {
             "version": "2.2.x",
-            "secret_key": ""
+            "secret_key": "fakeone"
         }
     },
-    "year": "2019",
-    "version": "0.1.1",
+    "year": "2020",
+    "version": "1.0",
     "websitedomains": ["*"],
     "websitedomains_str": "*",
     "site_domain": "example.com",

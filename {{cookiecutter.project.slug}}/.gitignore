@@ -59,7 +59,7 @@ node_modules/
 .env
 
 # User-uploaded media
-dproject/media/
+base/media/
 
 # collected static file directory
 staticfiles/
