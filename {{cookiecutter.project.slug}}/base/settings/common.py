@@ -130,7 +130,6 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     str(PROJ_DIR.path('static')),
-    'static',
 )
 
 STATICFILES_FINDERS = (
